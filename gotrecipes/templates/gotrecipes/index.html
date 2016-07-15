@@ -1,11 +1,14 @@
-<html>
-  <head>
-    <title>GotRecipes Index Page</title>
-  </head>
-  <body>
-	<form>
-		Ingredients (separate ingredients by commas):<br>
-		<input type="text" name="ingredients"><br>
-	</form>
-  </body>
-</html>
+{%extends 'gotrecipes/base.html' %}
+
+{% block content %}
+	<h1>You're homepage<h1>
+	<div class="user-options">
+		<span class="create-recipe">
+			<h3>Enter a new recipe<h3>
+			<a href={% url 'new_recipe' %}>Add a Recipe</a>
+		</span>
+		<span class="view-recipes">
+			<h3>Your recipes<h3>
+		</span>
+	</div>
+{% endblock %}
