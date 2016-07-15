@@ -1,14 +1,19 @@
 {%extends 'gotrecipes/base.html' %}
 
-{% block content %}
-	<h1>You're homepage<h1>
+{% block content %}	
 	<div class="user-options">
+	<h1>Your Homepage</h1>
 		<span class="create-recipe">
-			<h3>Enter a new recipe<h3>
+			<h3>Enter a new recipe</h3>
 			<a href={% url 'new_recipe' %}>Add a Recipe</a>
 		</span>
 		<span class="view-recipes">
-			<h3>Your recipes<h3>
+			<h3>Your recipes</h3>
+			<ul>
+			{% for recipe in recipes %}
+				<li>{{ recipe }}</li>
+			{% endfor %}
+			</ul>
 		</span>
 	</div>
 {% endblock %}
