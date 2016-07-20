@@ -1,0 +1,42 @@
+.page-head {
+	background: linear-gradient(#ffb31a, #ffd480)
+}
+#got-title {
+  font: 60px/1.3 'Oleo Script', Helvetica, sans-serif;
+  color: #990000;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+#got-sub {
+  font: 20px/ Helvetica, sans-serif;
+  color: #ffe6e6;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+h1,h3 {
+  font: Helvetica, sans-serif;
+}
+
+.home-head {
+  font-size: 20px;
+  color: #990000;
+  text-decoration: underline;
+}
+
+#recipe-manage {  
+  width: 216px; /* increasing width from 210 to 216 because your border takes 6 extra px*/
+}
+
+.create-recipe {
+  margin: 0px; /* remove all margins to fit two divs in the container */
+  display: inline-block; /* display block elements in one line */
+}
+
+.view-recipes {
+  margin: 0px;
+  display: inline-block;
+}

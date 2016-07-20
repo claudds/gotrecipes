@@ -1,11 +1,14 @@
+{% load staticfiles %}
 <html>
   <head>
-    <title>GotRecipes Index Page</title>
+    <title>GotRecipes Base Page</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
   </head>
   <body>
 	<div class="page-head">
-		<h1>GotRecipes</h1>
-		<h2>Collect and keep all your favourite recipes in one place</h2>
+		<h1 id="got-title">GotRecipes</h1>
+		<h3 id="got-sub">Write your own cookbook</h2>
 	</div>
 	<div class="content-container"}
 	{% block content %}

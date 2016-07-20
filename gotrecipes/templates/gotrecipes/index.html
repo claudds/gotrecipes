@@ -1,8 +1,11 @@
 {%extends 'gotrecipes/base.html' %}
 
 {% block content %}	
-	<div class="user-options">
-	<h1>Your Homepage</h1>
+<div class="user-options">
+	<div class="home-head">
+		<h1>Your Homepage</h1>
+	</div>
+	<div id="recipe-manage">
 		<span class="create-recipe">
 			<h3>Enter a new recipe</h3>
 			<a href={% url 'new_recipe' %}>Add a Recipe</a>
@@ -16,4 +19,5 @@
 			</ul>
 		</span>
 	</div>
+</div>
 {% endblock %}
