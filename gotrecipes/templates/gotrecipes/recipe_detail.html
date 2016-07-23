@@ -1,0 +1,16 @@
+{% extends 'gotrecipes/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="recipe-mods">
+		<a href="{% url 'recipe_edit' pk=recipe.pk %}"><img id="edit-icon" src="{% static 'images/pencil.jpg' %}" /></a>
+		<a href="{% url 'recipe_delete' pk=recipe.pk %}"><img id="delete-icon" src="{% static 'images/delete.png' %}" /></a>
+	</div>
+	<div class="recipe-detail">
+		{% autoescape off %}
+		<h1 id="recipe-title">{{ recipe.title }}</h1>
+		<p>{{ recipe.ingredients }}</p>
+		<p>{{ recipe.directions }}</p>	
+		{% endautoescape %}
+	</div>
+{% endblock %}

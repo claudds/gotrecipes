@@ -2,13 +2,16 @@
 <html>
   <head>
     <title>GotRecipes Base Page</title>
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
   </head>
   <body>
 	<div class="page-head">
 		<h1 id="got-title">GotRecipes</h1>
-		<h3 id="got-sub">Write your own cookbook</h2>
+		<span><h3 id="got-sub">Write your own cookbook</h3></span>
+		<span class="home"><h4><a href="{% url 'index' %}">home</a></span>
 	</div>
 	<div class="content-container"}
 	{% block content %}

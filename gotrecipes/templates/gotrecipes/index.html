@@ -6,18 +6,18 @@
 		<h1>Your Homepage</h1>
 	</div>
 	<div id="recipe-manage">
-		<span class="create-recipe">
+		<div class="create-recipe">
 			<h3>Enter a new recipe</h3>
 			<a href={% url 'new_recipe' %}>Add a Recipe</a>
-		</span>
-		<span class="view-recipes">
+		</div>
+		<div class="view-recipes">
 			<h3>Your recipes</h3>
 			<ul>
 			{% for recipe in recipes %}
-				<li>{{ recipe }}</li>
+				<li><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe }}</a></li>
 			{% endfor %}
 			</ul>
-		</span>
+		</div>
 	</div>
 </div>
 {% endblock %}
