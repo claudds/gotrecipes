@@ -15,7 +15,7 @@ def recipe_detail(request, pk):
 
 def new_recipe(request):
 	if request.method == "POST":
-		form = RecipeForm(request.POST)
+		form = RecipeForm(request.POST, request.FILES)
 		if form.is_valid():
 			recipe = form.save(commit=False)
 			recipe.save()
@@ -24,7 +24,7 @@ def new_recipe(request):
 		form = RecipeForm()
 	return render(request, 'gotrecipes/recipe_edit.html', {'form': form})
 
-@login_required	
+@login_required
 def recipe_edit(request, pk):
 	recipe = get_object_or_404(Recipe, pk=pk)
 	if request.method == "POST":

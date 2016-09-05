@@ -2,7 +2,7 @@
 
 {% block content %}
 	<h1>Create a new recipe </h1>
-	<form method="POST" class="recipeform">{% csrf_token %}
+	<form method="POST" class="recipeform" enctype="multipart/form-data">{% csrf_token %}
 		{{ form.as_p}}
 		<button type="submit" class="saverecipe">Save</button>
 	</form>

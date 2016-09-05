@@ -7,6 +7,4 @@ urlpatterns = [
 	url(r'^recipe/(?P<pk>\d+)/$', views.recipe_detail, name='recipe_detail'),
 	url(r'^recipe/(?P<pk>\d+)/edit/$', views.recipe_edit, name='recipe_edit'),
 	url(r'^recipe/(?P<pk>\d+)/remove/$', views.recipe_delete, name='recipe_delete'),
-#	url(r'^login/$', 'django.contrib.auth.views.login'),
-#	url(r'^logout/$, 'django.contrib.auth.views.logout'),
 ]
