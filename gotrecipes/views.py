@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RecipeForm
 from .models import Recipe
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def index(request):
@@ -22,6 +24,7 @@ def new_recipe(request):
 		form = RecipeForm()
 	return render(request, 'gotrecipes/recipe_edit.html', {'form': form})
 
+@login_required	
 def recipe_edit(request, pk):
 	recipe = get_object_or_404(Recipe, pk=pk)
 	if request.method == "POST":
@@ -34,6 +37,7 @@ def recipe_edit(request, pk):
 		form = RecipeForm(instance=recipe)
 	return render(request, 'gotrecipes/recipe_edit.html', {'form': form})
 
+@login_required
 def recipe_delete(request, pk):
 	recipe = get_object_or_404(Recipe, pk=pk)
 	recipe.delete()

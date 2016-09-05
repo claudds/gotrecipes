@@ -34,14 +34,10 @@ span {
   float: right;
   padding: 3px;
 }
-.home-head {
-  font-size: 20px;
-  color: #990000;
-  text-decoration: underline;
-}
 
-#recipe-manage {  
+#recipe-manage {
   width: 500px; /* increasing width from 210 to 216 because your border takes 6 extra px*/
+	padding: 15px
 }
 
 .create-recipe {
@@ -71,8 +67,8 @@ span {
 	float: right;
 }
 
-#edit-icon, #delete-icon {
-	width: 20 px;
+#edit-icon, #delete-icon,  #lock-icon {
+	width: 20px;
 	height: 20px
 }
 

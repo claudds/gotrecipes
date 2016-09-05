@@ -1,17 +1,14 @@
-{%extends 'gotrecipes/base.html' %}
+{% extends 'gotrecipes/base.html' %}
 
-{% block content %}	
+{% block content %}
 <div class="user-options">
-	<div class="home-head">
-		<h1>Your Homepage</h1>
-	</div>
 	<div id="recipe-manage">
 		<div class="create-recipe">
 			<h3>Enter a new recipe</h3>
 			<a href={% url 'new_recipe' %}>Add a Recipe</a>
 		</div>
 		<div class="view-recipes">
-			<h3>Your recipes</h3>
+			<h3>Recipes</h3>
 			<ul>
 			{% for recipe in recipes %}
 				<li><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe }}</a></li>
