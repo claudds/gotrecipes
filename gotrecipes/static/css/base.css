@@ -77,3 +77,13 @@ span {
   color: #990000;
   text-decoration: underline;
 }
+.recipe-detail {
+	padding: 30px;
+	width: 40%;
+}
+
+#food-img {
+	height: 150px;
+	width: 150;
+	float: right;
+}

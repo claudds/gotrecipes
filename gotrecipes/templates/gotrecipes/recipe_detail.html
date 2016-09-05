@@ -11,9 +11,14 @@
 	<div class="recipe-detail">
 		{% autoescape off %}
 		<h1 id="recipe-title">{{ recipe.title }}</h1>
+		<div>
+			<img id='food-img' src="{{ recipe.image.url }}" alt='recipe-image' />
+		</div>
+		<h2>Ingredients</h2>
 		<p>{{ recipe.ingredients }}</p>
+		<br>
+		<h2>Directions</h2>
 		<p>{{ recipe.directions }}</p>
-		<img id="food-img" src="{{ recipe.image.url }}" />
 		{% endautoescape %}
 	</div>
 {% endblock %}
