@@ -10,11 +10,11 @@
   <body>
 	<div class="page-head">
 		{% if user.is_authenticated %}
-		<a href="{% url 'recipe_edit' %}"><img id="edit-icon" src="{% static 'images/pencil.jpg' %}" /></a>
-		<a href="{% url 'recipe_delete' %}"><img id="delete-icon" src="{% static 'images/delete.png' %}" /></a>
+		<a href="{% url 'recipe_edit' %}"><img class="icon" src="{% static 'images/pencil.jpg' %}" /></a>
+		<a href="{% url 'recipe_delete' %}"><img class="icon" src="{% static 'images/delete.png' %}" /></a>
 		<p>Hello {{ user.username }}<small>(<a href="{% url 'logout'%}">Log out</a>)</small></p>
 		{% else %}
-		<a href="{% url 'login' %}"><img id="lock-icon" src="{% static 'images/lock.png' %}" /></a>
+		<a href="{% url 'login' %}"><img class="icon" src="{% static 'images/lock.png' %}" /></a>
 		<p><small>(<a href="{% url 'login' %}">Log In</a>)</small></p>
 		{% endif %}
 		<h1 id="got-title">GotRecipes</h1>

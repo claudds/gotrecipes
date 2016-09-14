@@ -1,0 +1,15 @@
+{% extends 'gotrecipes/base.html' %}
+
+{% block content %}
+<div class="user-options">
+		<div class="recipe-result">
+			<h3>Recipes</h3>
+			<ul>
+			{% for recipe in recipes %}
+        <li><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe }}</a></li>
+      {% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
