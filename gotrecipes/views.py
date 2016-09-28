@@ -34,7 +34,7 @@ def search_result(request, st):
 	results = Recipe.objects.filter(ingredients__icontains=st).filter(title__icontains=st)
 	return render(request, 'gotrecipes/search_result.html', {'recipes': results})
 
-@login_required
+@login_required(login_url='/login/')
 def recipe_edit(request, pk):
 	recipe = get_object_or_404(Recipe, pk=pk)
 	if request.method == "POST":
@@ -47,8 +47,20 @@ def recipe_edit(request, pk):
 		form = RecipeForm(instance=recipe)
 	return render(request, 'gotrecipes/recipe_edit.html', {'form': form})
 
-@login_required
+@login_required(login_url='/login/')
 def recipe_delete(request, pk):
 	recipe = get_object_or_404(Recipe, pk=pk)
 	recipe.delete()
 	return redirect('gotrecipes.views.index')
+
+def login(request):
+	username = password = ""
+	if request.POST:
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				return HTTPResponseRedirect('/')
+	return render(request, 'login.html')

@@ -1,24 +1,16 @@
 {% extends "gotrecipes/base.html" %}
 
 {% block content %}
-
-{% if form.errors %}
+<div id="login-title">
+  <h1>User Login</h1>
+</div>
+<!-- {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% endif %} -->
 
-<form method="post" action="{% url 'login' %}">
+<form method="post" action={% url 'login' %}>
 {% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
+  {{ form.as_p }}
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>

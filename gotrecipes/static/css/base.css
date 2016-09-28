@@ -87,3 +87,8 @@ span {
 	max-width: 300px;
 	float: right;
 }
+
+#login-title{
+  color: #990000;
+  text-decoration: underline;
+}

@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
+	url(r'^index/$', views.index, name='index2'),
 	url(r'^new/$', views.new_recipe, name='new_recipe'),
 	url(r'^search/$', views.search_recipe, name='search_recipe'),
 	url(r'^search_result/(?P<st>\w+)/$', views.search_result, name='search_result'),
